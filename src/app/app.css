@@ -1,0 +1,47 @@
+:host {
+  display: grid;
+  min-height: 95vh;
+  place-items: center;
+  padding: 0 1rem;
+  color: #172b42;
+  font-family: system-ui, sans-serif;
+}
+
+main { 
+    width: min(100%, 34rem); text-align: center; }
+.logo { 
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    letter-spacing: -.04em;
+}
+form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .75rem;
+  text-align: left;
+}
+
+form label {
+  grid-column: 1 / -1;
+}
+
+form input {
+  min-width: 0;
+}
+input, button { 
+    font: inherit; 
+    padding: .75rem 1rem; 
+    border-radius: .75rem; 
+}
+input { 
+    border: 1px solid #8595a7; 
+}
+button { 
+    justify-self: center; 
+    border: 0; 
+    background: #1559a4; 
+    color: white; 
+    cursor: pointer; 
+}
+p { 
+    min-height: 1.5rem; 
+}

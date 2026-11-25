@@ -2,10 +2,23 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('weather-archive');
+  readonly message = signal('');
+  private readonly cities = ['Vienna', 'Berlin', 'Paris', 'London'];
+
+  search(event: Event, query: string): void {
+    event.preventDefault();
+
+    const normalizedQuery = query.trim().toLowerCase();
+    const city = this.cities.find(
+      (name) => name.toLowerCase() === normalizedQuery,
+    );
+
+    this.message.set(
+      city ? `Selected city: ${city}` : 'City not found. Try Vienna or Berlin.',
+    );
+  }
 }
