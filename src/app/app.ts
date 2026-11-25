@@ -7,7 +7,7 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   readonly message = signal('');
-  private readonly cities = ['Vienna', 'Berlin', 'Paris', 'London'];
+  private readonly cities = ['Vienna', 'Berlin', 'Paris', 'London', 'Peking'];
 
   search(event: Event, query: string): void {
     event.preventDefault();
